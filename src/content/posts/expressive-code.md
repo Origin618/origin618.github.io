@@ -15,7 +15,7 @@ Here, we'll explore how code blocks look using [Expressive Code](https://express
 
 [Syntax Highlighting](https://expressive-code.com/key-features/syntax-highlighting/)
 
-#### Regular syntax highlighting
+#### 你好
 
 ```js
 console.log('This code is syntax highlighted!')
