@@ -10,7 +10,7 @@ import { LinkPreset } from "./types/config";
 export const siteConfig: SiteConfig = {
 	title: "Origin",
 	subtitle: "理解以真实为本，但真实本身并不会自动呈现",
-	lang: "zh-CN", // Language code, e.g. 'en', 'zh-CN', 'ja', etc.
+	lang: "zh_CN", // Language code, e.g. 'en', 'zh-CN', 'ja', etc.
 	themeColor: {
 		hue: 250, // Default hue for the theme color, from 0 to 360. e.g. red: 0, teal: 200, cyan: 250, pink: 345
 		fixed: false, // Hide the theme color picker for visitors
@@ -41,27 +41,14 @@ export const siteConfig: SiteConfig = {
 
 export const navBarConfig: NavBarConfig = {
   links: [
-    // 不要用 LinkPreset.Home，改成手动定义
-    {
-      name: '首页',
-      url: '/',
-      activationKeyword: 'home'
-    },
-    {
-      name: '归档',
-      url: '/archive',
-      activationKeyword: 'archive'
-    },
-    {
-      name: '关于',
-      url: '/about',
-      activationKeyword: 'about'
-    },
-    // 下面这个是你自己定义的，保持不变
+    LinkPreset.Home,
+    LinkPreset.Archive,
+    LinkPreset.About,
+    LinkPreset.Friends,
     {
       name: "GitHub",
-      url: "https://github.com/Origin618/origin618.github.io", 
-      external: true, 
+      url: "https://github.com/Origin618/origin618.github.io", // Internal links should not include the base path, as it is automatically added
+      external: true, // Show an external link icon and will open in a new tab
     },
   ],
 };
