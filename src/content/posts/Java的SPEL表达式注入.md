@@ -1,7 +1,7 @@
 ---
 title: Java的SPEL表达式注入
 published: 2025-11-05
-description: 先写一个Person类
+description: SPEL
 tags: [Example, Video]
 category: Examples
 draft: false
