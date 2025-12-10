@@ -29,13 +29,13 @@ draft: false
 
 进入 ``src/main/java/cc/ryanc/halo/Application.java ``代码中启动项目，如下图所示
 
-![4d6faf6f772a3914f85d8321557c7f7b](src\assets\images\4d6faf6f772a3914f85d8321557c7f7b.png)
+![4d6faf6f772a3914f85d8321557c7f7b](D:/0AGitHub/origin618.github.io/src/assets/images/4d6faf6f772a3914f85d8321557c7f7b.png)
 
 访问上述提供的地址 http://localhost:8090 ，进入安装向导，内容自行填写即可
 
 
 
-![image-20251210131414824](C:\Users\11033\AppData\Roaming\Typora\typora-user-images\image-20251210131414824.png)
+![image-20251210131414824](C:/Users/11033/AppData/Roaming/Typora/typora-user-images/image-20251210131414824.png)
 
 备注：
 
@@ -43,13 +43,13 @@ draft: false
 
 - 如若系统中安装了多个 JDK 版本，请务必前往``文件 - 项目结``（英文版请参考截图位置），将 JDK 版本设置为 **JDK1.8_291**，如下图所示：
 
-![3b8f2082-3c09-4fa8-a80e-ada732e72b96](E:\Program Files\xwechat_files\wxid_oqs4qrfp0zli22_2f83\temp\InputTemp\3b8f2082-3c09-4fa8-a80e-ada732e72b96.png)
+![3b8f2082-3c09-4fa8-a80e-ada732e72b96](D:/0AGitHub/origin618.github.io/src/assets/images/3b8f2082-3c09-4fa8-a80e-ada732e72b96.png)
 
 # 代码审计漏洞挖掘
 
 在 Halo 0.4.3 版本中多个依赖存在 CVE 漏洞，可使用较为新版本的 IDEA 在 pom.xml 处查看
 
-![d75d270e-6090-49c7-a6e2-50563965d9f7](E:\Program Files\xwechat_files\wxid_oqs4qrfp0zli22_2f83\temp\InputTemp\d75d270e-6090-49c7-a6e2-50563965d9f7.png)
+![d75d270e-6090-49c7-a6e2-50563965d9f7](D:/0AGitHub/origin618.github.io/src/assets/images/d75d270e-6090-49c7-a6e2-50563965d9f7.png)
 
 # 任意文件删除漏洞代码审计
 
@@ -57,8 +57,9 @@ draft: false
 
 删除操作，可能存在任意文件删除漏洞，如下图所示：
 
-
+![d6080d25-fecf-44fd-852b-266c68c5a3b8](D:/0AGitHub/origin618.github.io/src/assets/images/d6080d25-fecf-44fd-852b-266c68c5a3b8.png)
 
 通过抓包获取到接口名为 /admin/backup/delBackup ，通过关键字逐一尝试，最终使用关键字
 
 delBackup 定位到该接口的 Controller 层代码为 BackupController，如下图所示：
+
