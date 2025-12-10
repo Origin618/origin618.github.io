@@ -1,7 +1,7 @@
 ---
 title: Halo博客系统审计
 published: 2025-12-10
-description: 先写一个Person类
+description: Halo博客
 tags: [Example, Video]
 category: Examples
 draft: false
@@ -29,7 +29,7 @@ draft: false
 
 进入 ``src/main/java/cc/ryanc/halo/Application.java ``代码中启动项目，如下图所示
 
-![6aac20cb-8c9b-42a9-817f-0489f0918f9f](/public/6aac20cb-8c9b-42a9-817f-0489f0918f9f.png)
+![6aac20cb-8c9b-42a9-817f-0489f0918f9f](/src/assets/images/tupian.jpeg)
 
 访问上述提供的地址 http://localhost:8090 ，进入安装向导
 
