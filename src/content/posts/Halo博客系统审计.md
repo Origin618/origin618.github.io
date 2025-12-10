@@ -49,7 +49,7 @@ draft: false
 
 在 Halo 0.4.3 版本中多个依赖存在 CVE 漏洞，可使用较为新版本的 IDEA 在 pom.xml 处查看
 
-![d75d270e-6090-49c7-a6e2-50563965d9f7](D:/0AGitHub/origin618.github.io/src/assets/images/d75d270e-6090-49c7-a6e2-50563965d9f7.png)
+![ce676cd7-be8c-4fd3-af90-d3c6b6c9cc73](/ce676cd7-be8c-4fd3-af90-d3c6b6c9cc73.png)
 
 # 任意文件删除漏洞代码审计
 
@@ -57,23 +57,23 @@ draft: false
 
 删除操作，可能存在任意文件删除漏洞：
 
-![d6080d25-fecf-44fd-852b-266c68c5a3b8](D:/0AGitHub/origin618.github.io/src/assets/images/d6080d25-fecf-44fd-852b-266c68c5a3b8.png)
+![ad001902-0f24-4061-9454-c26e9fd01e74](/ad001902-0f24-4061-9454-c26e9fd01e74.png)
 
 通过抓包获取到接口名为 ``/admin/backup/delBackup`` ，通过关键字一一尝试，最终使用
 
 ``delBackup`` 定位到该接口的 Controller 层代码为 BackupController：
 
-![image-20251210145055635](C:\Users\11033\AppData\Roaming\Typora\typora-user-images\image-20251210145055635.png)
+![a51bcf5b-0c79-49ee-81ac-0a1c6c1cd0da](/a51bcf5b-0c79-49ee-81ac-0a1c6c1cd0da.png)
 
 我们进入 BackupController 层，具体代码位于第 211 行至第 220 行
 
-![image-20251210145438312](C:\Users\11033\AppData\Roaming\Typora\typora-user-images\image-20251210145438312.png)
+![d749ea4a-b9e8-4e10-8192-f027ad28e7ba](/d749ea4a-b9e8-4e10-8192-f027ad28e7ba.png)
 
 第一步，双击213行的filename参数，通过高亮 ``fileName ``以及 ``type ``参数，在第 215 行处被
 
 使用
 
-![image-20251210145848758](C:\Users\11033\AppData\Roaming\Typora\typora-user-images\image-20251210145848758.png)
+![e11070b8-5061-4e5c-b112-9aca7f721bfa](/e11070b8-5061-4e5c-b112-9aca7f721bfa.png)
 
 第二步，分析第 215 行，代码拼接了用户的主目录路径加上 ``/halo/backup/ ``加上传递来的
 
@@ -81,19 +81,19 @@ type 参数加上传递来的 ``fileName`` 参数，最终拼接成一个完整�
 
 数是其中一个路径
 
-![image-20251210145825487](C:\Users\11033\AppData\Roaming\Typora\typora-user-images\image-20251210145825487.png)
+![502b4b8a-b5a2-4fde-964c-54c7dec71803](/502b4b8a-b5a2-4fde-964c-54c7dec71803.png)
 
 第三步，通过上图单击 ``srcPath ``的高亮显示，可以看到在第 217 行使用了 FileUtil.del 方法对
 
 ``srcPath ``进行了操作。将鼠标悬停在该方法处，可以看到是 hutool 组件下的方法。
 
-![image-20251210150154834](C:\Users\11033\AppData\Roaming\Typora\typora-user-images\image-20251210150154834.png)
+![303bfb46-8a45-4c4d-a5a0-7f344ea5342a](/303bfb46-8a45-4c4d-a5a0-7f344ea5342a.png)
 
 上述两步操作中可以看到，该接口并没有任何防止跨目录的操作，从功能点思考可能会造成任意文件删除漏洞。
 
 最后，在第 217 行处打个断点进行测试
 
-![image-20251210150428492](C:\Users\11033\AppData\Roaming\Typora\typora-user-images\image-20251210150428492.png)
+![19e9adfd-6492-4f9d-8a1a-1614f5b353f7](/19e9adfd-6492-4f9d-8a1a-1614f5b353f7.png)
 
 ## 漏洞验证
 
@@ -101,12 +101,12 @@ type 参数加上传递来的 ``fileName`` 参数，最终拼接成一个完整�
 
 我们在I盘下新建一个名为`1.txt`的文件。点击删除功能点捉包
 
-![image-20251210150852254](C:\Users\11033\AppData\Roaming\Typora\typora-user-images\image-20251210150852254.png)
+![c13528a4-d115-4fa8-ac3b-729684c24fe9](/c13528a4-d115-4fa8-ac3b-729684c24fe9.png)
 
 在代码审计部分，我们知道 type 和 fileName 参数都拼接到了路径中
 
 所以这两个参数都可以跨目录实现任意文件删除操作
 
-![image-20251210152329600](C:\Users\11033\AppData\Roaming\Typora\typora-user-images\image-20251210152329600.png)
+![ffe9b025-e408-45c6-9944-05aa2b6fbbed](/ffe9b025-e408-45c6-9944-05aa2b6fbbed.png)
 
 删除成功
