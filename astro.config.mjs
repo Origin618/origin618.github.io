@@ -56,7 +56,7 @@ export default defineConfig({
 			},
 		}),
 		expressiveCode({
-			themes: [expressiveCodeConfig.theme, expressiveCodeConfig.theme],
+			themes: ['github-light'],
 			plugins: [
 				pluginCollapsibleSections(),
 				pluginLineNumbers(),
@@ -72,17 +72,17 @@ export default defineConfig({
 				},
 			},
 			styleOverrides: {
-				codeBackground: "var(--codeblock-bg)",
-				borderRadius: "0.75rem",
-				borderColor: "none",
+				codeBackground: '#f6f8fa',
+				borderRadius: "0.5rem",
+				borderColor: "#d0d7de",
 				codeFontSize: "0.875rem",
 				codeFontFamily: "'JetBrains Mono Variable', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace",
 				codeLineHeight: "1.5rem",
 				frames: {
-					editorBackground: "var(--codeblock-bg)",
-					terminalBackground: "var(--codeblock-bg)",
-					terminalTitlebarBackground: "var(--codeblock-topbar-bg)",
-					editorTabBarBackground: "var(--codeblock-topbar-bg)",
+					editorBackground: '#f6f8fa',
+					terminalBackground: '#f6f8fa',
+					terminalTitlebarBackground: '#eaeef2',
+					editorTabBarBackground: '#eaeef2',
 					editorActiveTabBackground: "none",
 					editorActiveTabIndicatorBottomColor: "var(--primary)",
 					editorActiveTabIndicatorTopColor: "none",
