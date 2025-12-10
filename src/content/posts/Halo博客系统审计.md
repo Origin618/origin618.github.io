@@ -2,8 +2,8 @@
 title: Halo博客系统审计
 published: 2025-12-10
 description: Halo博客
-tags: [Example, Video]
-category: Examples
+tags: [java审计, Video]
+category: java审计
 draft: false
 ---
 
@@ -110,3 +110,18 @@ type 参数加上传递来的 ``fileName`` 参数，最终拼接成一个完整�
 ![ffe9b025-e408-45c6-9944-05aa2b6fbbed](/ffe9b025-e408-45c6-9944-05aa2b6fbbed.png)
 
 删除成功
+
+```java
+123123
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+```
+
