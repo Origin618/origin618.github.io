@@ -56,3 +56,9 @@ draft: false
 梳理文章功能时，发现后台设置下博客备份功能存在一个删除功能，通过抓包发现是根据文件名进行的
 
 删除操作，可能存在任意文件删除漏洞，如下图所示：
+
+
+
+通过抓包获取到接口名为 /admin/backup/delBackup ，通过关键字逐一尝试，最终使用关键字
+
+delBackup 定位到该接口的 Controller 层代码为 BackupController，如下图所示：
