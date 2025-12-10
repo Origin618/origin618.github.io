@@ -1,36 +1,34 @@
 ---
-import alexanderImg from "../../assets/images/demo-avatar.png";
-import MainGridLayout from "../layouts/MainGridLayout.astro";
-import { getEntry } from "astro:content";
-import { render } from "astro:content";
+import { getEntry, render } from "astro:content";
 import Markdown from "@components/misc/Markdown.astro";
+import alexanderImg from "../../assets/images/demo-avatar.png";
 import I18nKey from "../i18n/i18nKey";
 import { i18n } from "../i18n/translation";
+import MainGridLayout from "../layouts/MainGridLayout.astro";
 
 const friendsPost = await getEntry("spec", "friends");
 
 if (!friendsPost) {
-  throw new Error("Friend page content not found");
+	throw new Error("Friend page content not found");
 }
 
 const { Content } = await render(friendsPost);
 
 const items = [
-  {
-    title: "Astro",
-    imgurl: "https://avatars.githubusercontent.com/u/44914786?s=48&v=4",
-    desc: "The web framework for content-driven websites. ⭐️ Star to support our work!",
-    siteurl: "https://github.com/withastro/astro",
-    tags: ["框架"],
-  },
-  {
-    title: "Alexander",
-    imgurl: "/a7cc53c907d9e972b18a2bdf8b40ca3a.jpg",
-    desc: "特别牛逼！简直就是神！",
-    siteurl: "https://www.cnblogs.com/alexander17",
-    tags: [" "],
-  },
-
+	{
+		title: "Astro",
+		imgurl: "https://avatars.githubusercontent.com/u/44914786?s=48&v=4",
+		desc: "The web framework for content-driven websites. ⭐️ Star to support our work!",
+		siteurl: "https://github.com/withastro/astro",
+		tags: ["框架"],
+	},
+	{
+		title: "Alexander",
+		imgurl: "/a7cc53c907d9e972b18a2bdf8b40ca3a.jpg",
+		desc: "特别牛逼！简直就是神！",
+		siteurl: "https://www.cnblogs.com/alexander17",
+		tags: [" "],
+	},
 ];
 ---
 

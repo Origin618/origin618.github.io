@@ -40,17 +40,17 @@ export const siteConfig: SiteConfig = {
 };
 
 export const navBarConfig: NavBarConfig = {
-  links: [
-    LinkPreset.Home,
-    LinkPreset.Archive,
-    LinkPreset.About,
-    LinkPreset.Friends,
-    {
-      name: "GitHub",
-      url: "https://github.com/Origin618/origin618.github.io", // Internal links should not include the base path, as it is automatically added
-      external: true, // Show an external link icon and will open in a new tab
-    },
-  ],
+	links: [
+		LinkPreset.Home,
+		LinkPreset.Archive,
+		LinkPreset.About,
+		LinkPreset.Friends,
+		{
+			name: "GitHub",
+			url: "https://github.com/Origin618/origin618.github.io", // Internal links should not include the base path, as it is automatically added
+			external: true, // Show an external link icon and will open in a new tab
+		},
+	],
 };
 
 export const profileConfig: ProfileConfig = {
@@ -65,13 +65,13 @@ export const profileConfig: ProfileConfig = {
 			// `pnpm add @iconify-json/<icon-set-name>`
 			url: "https://qm.qq.com/cgi-bin/qm/qr?k=LU4YW-dvAfSppoun4xFG4cvTfk3r0csE",
 		},
-		
+
 		{
 			name: "GitHub",
 			icon: "fa6-brands:github",
 			url: "https://github.com/Origin618/origin618.github.io",
 		},
-		
+
 		{
 			name: "Steam",
 			icon: "fa6-brands:steam",
