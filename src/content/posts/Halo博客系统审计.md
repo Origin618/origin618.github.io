@@ -29,13 +29,13 @@ draft: false
 
 进入 ``src/main/java/cc/ryanc/halo/Application.java ``代码中启动项目，如下图所示
 
-![4d6faf6f772a3914f85d8321557c7f7b](/src/assets/images/4d6faf6f772a3914f85d8321557c7f7b.png)
+![6aac20cb-8c9b-42a9-817f-0489f0918f9f](/6aac20cb-8c9b-42a9-817f-0489f0918f9f.png)
 
 访问上述提供的地址 http://localhost:8090 ，进入安装向导
 
 
 
-![image-20251210131414824](C:/Users/11033/AppData/Roaming/Typora/typora-user-images/image-20251210131414824.png)
+![13be85b1-e8bb-4543-8bae-cb25bd6c1b3c](/13be85b1-e8bb-4543-8bae-cb25bd6c1b3c.png)
 
 备注：
 
@@ -43,7 +43,7 @@ draft: false
 
 - 如若系统中安装了多个 JDK 版本，请务必前往``文件 - 项目结``（英文版请参考截图位置），将 JDK 版本设置为 **JDK1.8_291**，如下图所示：
 
-![0249ff1d-8a95-48b1-897d-3ea81c1b2350](/public/0249ff1d-8a95-48b1-897d-3ea81c1b2350.png)
+![0249ff1d-8a95-48b1-897d-3ea81c1b2350](/0249ff1d-8a95-48b1-897d-3ea81c1b2350.png)
 
 # 代码审计漏洞挖掘
 
