@@ -29,7 +29,7 @@ draft: false
 
 进入 ``src/main/java/cc/ryanc/halo/Application.java ``代码中启动项目，如下图所示
 
-![6aac20cb-8c9b-42a9-817f-0489f0918f9f](/src/assets/images/tupian.jpeg)
+![4d6faf6f772a3914f85d8321557c7f7b](/src/assets/images/4d6faf6f772a3914f85d8321557c7f7b.png)
 
 访问上述提供的地址 http://localhost:8090 ，进入安装向导
 
