@@ -2,8 +2,8 @@
 title: Java的SPEL表达式注入
 published: 2025-11-05
 description: SPEL
-tags: [Example, Video]
-category: Examples
+tags: [java审计, Video]
+category: java审计
 draft: false
 ---
 
