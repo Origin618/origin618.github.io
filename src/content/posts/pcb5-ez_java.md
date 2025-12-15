@@ -24,7 +24,7 @@ draft: false
 
 奇怪的来了，后台显示未经授权
 
-![image](https://img2024.cnblogs.com/blog/3568664/202512/3568664-20251215175531562-564852132.png)
+![image](./../../../public/pcb5-ez_java/3568664-20251215175531562-564852132.png)
 
 好在这里报错爆出了apache服务器和版本Apache Tomcat/9.0.108
 
@@ -38,7 +38,7 @@ https://blog.csdn.net/AKM4180/article/details/154134981
 
 访问web.xml文件：``/download?path=%2fWEB-INF%2fweb.xml``，得到
 
-![image](https://img2024.cnblogs.com/blog/3568664/202512/3568664-20251215175552135-1045417985.png)
+![image](./../../../public/pcb5-ez_java/3568664-20251215175552135-1045417985.png)
 
 这里有好几个servlet，我们先读取AdminDashboardServlet
 
@@ -46,7 +46,7 @@ http://192.168.18.25:25004/download?path=%2FWEB-INF%2Fclasses%2Fcom%2Fctf%2FBack
 
 得到一个download，将源码反编译得到
 
-![image](https://img2024.cnblogs.com/blog/3568664/202512/3568664-20251215175600548-925904754.png)
+![image](./../../../public/pcb5-ez_java/3568664-20251215175600548-925904754.png)
 
 
 其中``validateAdmin``方法存在逻辑漏洞：
