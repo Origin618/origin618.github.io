@@ -15,7 +15,7 @@ draft: false
 
 根据前面题目的经验，打开cookie发现是jwt编码
 
-![image](https://img2024.cnblogs.com/blog/3568664/202512/3568664-20251215165848806-1721264182.png)
+![image](./../../../public/pcb5-ez_java/3568664-20251215165848806-1721264182.png)
 
 
 将Admin改为admin编码
