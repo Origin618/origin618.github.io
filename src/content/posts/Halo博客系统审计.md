@@ -1,7 +1,7 @@
 ---
 title: Halo博客系统审计
 published: 2025-12-10
-description: Halo博客
+description: Halo博客系统审计
 tags: [java审计]
 category: java学习
 draft: false

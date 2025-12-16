@@ -1,7 +1,7 @@
 ---
 title: pcb-2025-web
 published: 2025-12-15
-description: pcb-2025
+description: pcb-2025-web
 tags: [pcb]
 category: 比赛
 draft: false

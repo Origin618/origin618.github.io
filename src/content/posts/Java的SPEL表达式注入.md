@@ -1,7 +1,7 @@
 ---
 title: Java的SPEL表达式注入
 published: 2025-11-05
-description: SPEL
+description: Java的SPEL表达式注入
 tags: [java审计]
 category: java学习
 draft: false
