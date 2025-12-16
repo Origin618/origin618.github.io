@@ -345,7 +345,7 @@ if __name__ == "__main__":
 
 开局一个登录框，尝试弱口令和注入都无解，弹窗username or password err
 
-alert('username or password err');
+`alert('username or password err');`
 
 遂爆破目录得到/flag.php,/test.txt,/upload.php接口
 访问
