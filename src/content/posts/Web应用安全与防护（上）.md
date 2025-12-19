@@ -227,6 +227,8 @@ while True:
 
 CTF{no_characters_to_execute_shell_commands_he3e}
 
+# 第三章 文件包含与路径遍历漏洞
+
 ## 日志文件包含
 
 使用php伪协议会被过滤
@@ -392,6 +394,8 @@ for t in threads:
 ![image-20251218210037263](./../../../public/pcb5-ez_java/image-20251218210037263-1766103420753-13.png)
 
 CTF{fileupload_temp_file_include_success}
+
+# 第四章 用户认证与会话安全
 
 ## Session固定攻击
 
