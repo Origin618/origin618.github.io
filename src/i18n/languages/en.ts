@@ -12,7 +12,7 @@ export const en: Translation = {
 	[Key.recentPosts]: "Recent Posts",
 
 	[Key.comments]: "Comments",
-	[Key.friends]: 'Friends',
+	[Key.friends]: "Friends",
 
 	[Key.untitled]: "Untitled",
 	[Key.uncategorized]: "Uncategorized",
